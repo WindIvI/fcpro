@@ -50,9 +50,6 @@ import { SysinterfaceeditComponent } from './components/core/sysinterfaceedit.co
 import { SysvieweditComponent } from './components/core/sysviewedit.component';
 import { SysviewelementeditComponent } from './components/core/sysviewelementedit.component';
 import { SysserviceComponent } from './components/core/sysservice.component';
-import { DeactivateGuard } from './routeconfig/deactivateguard';
-import { SysfuncComponent } from './components/core/sysfunc.component';
-import { SysfunceditComponent } from './components/core/sysfuncedit.component';
 
 export const Routers: Routes = [
     {
@@ -226,7 +223,6 @@ export const Routers: Routes = [
     }, {
         path: 'sysserviceEdit',//设立部门
         component: SysserviceeditComponent,
-        canDeactivate: [DeactivateGuard],
         data: { keep: false },
     }, {
         path: 'sysserviceList',//服务
@@ -269,12 +265,8 @@ export const Routers: Routes = [
         component: SysvieweditComponent,
         data: { keep: false }
     }, {
-        path: 'sysfuncList',//开发向导-卡片
-        component: SysfuncComponent,
-        data: { keep: false }
-    }, {
-        path: 'sysfuncEdit',//开发向导-卡片
-        component: SysfunceditComponent,
+        path: 'sysviewelementEdit',//开发向导-卡片
+        component: SysviewelementeditComponent,
         data: { keep: false }
     }, {
         path: '**',

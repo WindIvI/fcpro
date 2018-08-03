@@ -36,7 +36,7 @@ export class SysserviceComponent extends ParentlistComponent {
   }
   init(): void {
     //26个字母name,方法名,BUSTYPE为'fastsearch'
-    this.fastsearchWords = this.mainService.initFastSeachWords();
+    this.fastsearchWords = this.mainService.fastSearch();
     //每个卡片的操作按钮,取列表工具栏的明细按钮,默认显示前两个,超出的显示到更多操作里
     this.btnlistOnes = this.mainService.appButtons.filter(btn =>
       btn.BTNTYPE === 'LISTONE'
@@ -104,9 +104,6 @@ export class SysserviceComponent extends ParentlistComponent {
         this.pageList = result.DATA;
       }
     });
-  }
-  listEdit(sysservice: any) {
-    this.navRouter(this.getRouteUrl('Edit'), { ID: sysservice.ID });
   }
   /**
    * 按钮明细
